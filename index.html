@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="src/css/style.css"></link>
+    
+    <title>RDBR Bootcamp</title>
+
+</head>
+
+<body>
+
+    <header id="header">
+        <a href="#"><image src="src/images/LOGO-02 3.png" id="REDBERRY"></image></a>
+    </header>
+
+    <main>
+
+        <div class="container">
+
+        <button  id="reg">რეგიონი</button><image style="margin-left: -2rem;" src="src/images/Icon.png">
+            
+        <button  id="pri">საფასო კატეგორია</button><image style="margin-left: -2rem;" src="src/images/Icon.png">   
+            
+        <button  id="siz">ფართობი</button><image style="margin-left: -2rem;" src="src/images/Icon.png">   
+
+        <button  id="broom">საძინებლების რაოდენობა</button><image style="margin-left: -2rem;" src="src/images/Icon.png">   
+            
+<!---->
+            <div class="custom-box" id="custom-box">
+                <div class="box-header">
+                    <span style="font-weight: 900;">რეგიონის მიხედვით</span>
+                    <button class="close-button" id="close-button">X</button>
+                </div>
+                <div class="checkbox-container">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="option" value="1"> ქართლი</label>
+                        <label><input type="checkbox" name="option" value="2"> კახეთი</label>
+                        <label><input type="checkbox" name="option" value="3"> იმერეთი</label>
+                        <label><input type="checkbox" name="option" value="3"> სამეგრელო</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="option" value="4"> გურია</label>
+                        <label><input type="checkbox" name="option" value="5"> რაჭა</label>
+                        <label><input type="checkbox" name="option" value="6"> ლეჩხუმი</label>
+                        <label><input type="checkbox" name="option" value="3"> სამცხე-ჯავახეთი</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="option" value="7"> აჭარა</label>
+                        <label><input type="checkbox" name="option" value="8"> სვანეთი</label>
+                        <label><input type="checkbox" name="option" value="9"> მცხეთა-მთიანეთი</label>
+                        <label><input type="checkbox" name="option" value="9"> თბილისი</label>
+                    </div>
+                </div>
+                <button class="submit-button">არჩევა</button>
+            </div>
+<!---->
+
+<!---->
+<div id="pri-ran">
+
+            <div class="box-header">
+                <span style="font-weight: 900;">ფასის მიხედვით</span>
+                <button class="close-button-2" id="close-button-2">X</button>
+            </div>
+
+            <div id="pri-container">
+                <div id="prices">
+                    <input id="inp-min" placeholder="დან" type="number">
+                    <input id="inp-max" placeholder="მდე" type="number">
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center;">
+                <span style="margin-top: 1rem; font-weight: 600;" class="price-label">მინ. ფასი</span>
+                <span style="margin-top: 1rem; font-weight: 600; margin-left: 7rem;" class="price-label-2">მაქს. ფასი</span>
+            </div>
+               
+            <div id="prices-cont">
+                <div id="min-prices">
+                    <button class="min-price" data-value="50000">50,000 ₾</button>
+
+                    <button class="min-price" data-value="100000">100,000 ₾</button>
+
+                    <button class="min-price" data-value="150000">150,000 ₾</button>
+
+                    <button class="min-price" data-value="200000">200,000 ₾</button>
+
+                    <button class="min-price" data-value="300000">300,000 ₾</button>
+                </div>
+
+                <div id="max-prices">
+                    <button class="max-price" data-value="50000">50,000 ₾</button>
+
+                    <button class="max-price" data-value="100000">100,000 ₾</button>
+
+                    <button class="max-price" data-value="150000">150,000 ₾</button>
+
+                    <button class="max-price" data-value="200000">200,000 ₾</button>
+
+                    <button class="max-price" data-value="300000">300,000 ₾</button>
+                </div>
+            </div>
+
+    <button class="submit-button-2">არჩევა</button>
+</div>
+<!---->
+
+<!---->
+    <div id="siz-ran">
+
+                <div class="box-header">
+                    <span style="font-weight: 900;">ფართობის მიხედვით</span>
+                    <button class="close-button-3" id="close-button-3">X</button>
+                </div>
+    
+                <div id="siz-container">
+                    <div id="sizes">
+                        <input id="inp-min-2" placeholder="დან" type="number">
+                        <input id="inp-max-2" placeholder="მდე" type="number">
+                    </div>
+                </div>
+    
+                <div style="display: flex; align-items: center;">
+                    <span style="margin-top: 1rem; font-weight: 600;" class="price-label">მინ. მ</span>
+                    <span style="margin-top: 1rem; font-weight: 600; margin-left: 8.7rem;" class="price-label-2">მაქს. მ</span>
+                </div>
+                   
+                <div id="sizes-cont">
+                    <div id="min-sizes">
+                        <button class="min-siz" data-value="50000">50,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="min-siz" data-value="100000">100,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="min-siz" data-value="150000">150,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="min-siz" data-value="200000">200,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="min-siz" data-value="300000">300,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+                    </div>
+                    
+                    <div id="max-sizes">
+                        <button class="max-siz" data-value="50000">50,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="max-siz" data-value="100000">100,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="max-siz" data-value="150000">150,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="max-siz" data-value="200000">200,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+    
+                        <button class="max-siz" data-value="300000">300,000 <span style="font-weight: 400; font-size: 15px; margin-left: 5px;">მ</span></button>
+                    </div>
+                </div>
+                
+    
+        <button class="submit-button-3">არჩევა</button>
+    </div>
+<!---->       
+
+<!---->
+            <div id="broom-ran">
+                
+                <div class="box-header">
+                    <span style="text-wrap:nowrap; font-weight: 900;">საძინებლების რაოდენობა</span>
+                    <button class="close-button-4" id="close-button-4">X</button>
+                </div>
+
+                <div id="broom-container">
+                    <div id="brooms">
+                        <input id="inp-min-3" placeholder="1" type="number">
+                    </div>
+                </div>
+
+                <button class="submit-button-4">არჩევა</button>
+            </div>
+<!---->
+
+            <!--///////////////////////////////////-->
+
+
+
+            
+
+
+
+            <!--///////////////////////////////////-->
+
+            <div class="button-group">
+                <button id="btn-1"><span id="plus">+</span>ლისტინგის დამატება</button>
+                <button id="btn-2"><span id="plus">+</span>აგენტის დამატება</button>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>
