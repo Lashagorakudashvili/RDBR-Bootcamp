@@ -126,26 +126,78 @@ document.getElementById('broom').addEventListener('click', function() {
 });
 /**/
 
-/**/
-function createFilterTag(text) {
-    const filterTag = document.createElement('div');
-    filterTag.classList.add('filter-tag');
 
-    const filterText = document.createElement('span');
-    filterText.textContent = text;
-    filterTag.appendChild(filterText);
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'X';
-    removeButton.onclick = function() {
-        filterTag.remove();
-        updateRemoveAllButtonVisibility();
-    };
-    filterTag.appendChild(removeButton);
+/*//////////////////////////////////////*/
+const filterOrder = ['region', 'price', 'size', 'bedrooms'];
 
-    document.getElementById('filter-tags-wrapper').appendChild(filterTag);
+function createOrUpdateFilterTag(type, text) {
+    const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
 
+    if (type === 'region') {
+        const selectedRegions = Array.from(document.querySelectorAll('input[name="option"]:checked')).map(input => input.nextSibling.textContent.trim());
+        selectedRegions.forEach(region => {
+            let existingTag = Array.from(filterTagsWrapper.children).find(tag => tag.dataset.type === 'region' && tag.querySelector('span').textContent === region);
+            if (!existingTag) {
+                const filterTag = document.createElement('div');
+                filterTag.classList.add('filter-tag');
+                filterTag.dataset.type = 'region';
+
+                const filterText = document.createElement('span');
+                filterText.textContent = region;
+                filterTag.appendChild(filterText);
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'X';
+                removeButton.onclick = function() {
+                    filterTag.remove();
+                    updateRemoveAllButtonVisibility();
+                };
+                filterTag.appendChild(removeButton);
+
+                filterTagsWrapper.appendChild(filterTag);
+            }
+        });
+    } else {
+        let existingTag = Array.from(filterTagsWrapper.children).find(tag => tag.dataset.type === type);
+
+        if (existingTag) {
+            existingTag.querySelector('span').textContent = text;
+        } else {
+            const filterTag = document.createElement('div');
+            filterTag.classList.add('filter-tag');
+            filterTag.dataset.type = type;
+
+            const filterText = document.createElement('span');
+            filterText.textContent = text;
+            filterTag.appendChild(filterText);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'X';
+            removeButton.onclick = function() {
+                filterTag.remove();
+                updateRemoveAllButtonVisibility();
+            };
+            filterTag.appendChild(removeButton);
+
+            filterTagsWrapper.appendChild(filterTag);
+        }
+    }
+
+    reorderFilterTags();
     updateRemoveAllButtonVisibility();
+}
+
+function reorderFilterTags() {
+    const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
+    const tags = Array.from(filterTagsWrapper.children);
+
+    tags.sort((a, b) => {
+        return filterOrder.indexOf(a.dataset.type) - filterOrder.indexOf(b.dataset.type);
+    });
+
+    filterTagsWrapper.innerHTML = '';
+    tags.forEach(tag => filterTagsWrapper.appendChild(tag));
 }
 
 function updateRemoveAllButtonVisibility() {
@@ -163,32 +215,50 @@ document.getElementById('remove-all-button').addEventListener('click', function(
     document.getElementById('filter-tags-wrapper').innerHTML = '';
     this.style.display = 'none';
 });
-/**/
 
-/**/
 document.querySelector('.submit-button').addEventListener('click', function() {
-    let selectedRegion = document.querySelector('input[name="option"]:checked').nextSibling.textContent.trim();
-    createFilterTag(selectedRegion);
+    createOrUpdateFilterTag('region');
 });
+
+/*///////////////////////////////////////*/
 
 document.querySelector('.submit-button-2').addEventListener('click', function() {
     let minPrice = document.getElementById('inp-min').value;
     let maxPrice = document.getElementById('inp-max').value;
-    createFilterTag(`${minPrice}₾ - ${maxPrice}₾`);
-});
+    
+    const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
+    const removeAllButton = document.getElementById('remove-all-button');
+
+        if (minPrice <= 80000) {
+            document.querySelector(".card-group").style.display = "grid";
+            document.getElementById("notFound").style.display = "none"
+
+            createOrUpdateFilterTag('price', `${minPrice}₾ - ${maxPrice}₾`);
+        }
+        
+        else {
+            document.querySelector(".card-group").style.display = "none";
+            createOrUpdateFilterTag('price', `${minPrice}₾ - ${maxPrice}₾`);
+
+            document.getElementById("notFound").style.display = "inline"
+        }
+})
+/*///////////////////////////////////////*/
+
+/*document.querySelector('.submit-button-2').addEventListener('click', function() {
+    let minPrice = document.getElementById('inp-min').value;
+    let maxPrice = document.getElementById('inp-max').value;
+    createOrUpdateFilterTag('price', `${minPrice}₾ - ${maxPrice}₾`);
+});*/
 
 document.querySelector('.submit-button-3').addEventListener('click', function() {
     let minSize = document.getElementById('inp-min-2').value;
     let maxSize = document.getElementById('inp-max-2').value;
-    createFilterTag(`${minSize}მ² - ${maxSize}მ²`);
+    createOrUpdateFilterTag('size', `${minSize}მ² - ${maxSize}მ²`);
 });
 
 document.querySelector('.submit-button-4').addEventListener('click', function() {
     let bedrooms = document.getElementById('inp-min-3').value;
-    createFilterTag(`${bedrooms} საძინებელი`);
+    createOrUpdateFilterTag('bedrooms', `${bedrooms} საძინებელი`);
 });
-/**/
-
-
-
 /*//////////////////////////////////////*/

@@ -21,7 +21,7 @@
 
     <main>
 
-        <div class="container">
+      <div style="z-index: 1000; position: relative;" class="container">
 
         <button  id="reg">რეგიონი</button><image style="margin-left: -2rem;" src="src/images/Icon.png">
             
@@ -196,90 +196,154 @@
 
 
         <!-----------------------------------> 
+        <span id="notFound">აღნიშნული მონაცემებით განცხადება არ იძებნება</span>
 
-
-        <div class="card-group">
+        <div style="z-index: 10;" class="card-group">
+          <a id="card-link" href="#">
             <div class="card">
-              <img src="src/images/image.png" class="card-img-top" alt="...">
+              <div class="image-container">
+                <img src="src/images/image.png" class="card-img-top" alt="...">
+                <span class="overlay-text">ქირავდება</span>
+              </div>
               <div class="card-body">
                 <h5 class="card-price">80 000 ₾</h5>
-                <p  class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
+                <span class="card-locat"><image id="locat-img" src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</span>
               </div>
               <div class="card-footer">
-                <small  class="text-body-secondary">Last updated 3 mins ago</small>
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
               </div>
             </div>
+          </a>
+            
+          <a id="card-link" href="#">
             <div class="card">
-              <img src="src/images/image2.png" class="card-img-top" alt="...">
+              <div class="image-container">
+                <img src="src/images/image2.png" class="card-img-top" alt="...">
+                <span class="overlay-text">იყიდება</span>
+              </div>
               <div class="card-body">
                 <h5 class="card-price">80 000 ₾</h5>
                 <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
               </div>
             </div>
+          </a>
+            
+          <a id="card-link" href="#">
             <div class="card">
-              <img src="src/images/image3.png" class="card-img-top" alt="...">
+              <div class="image-container">
+                <img src="src/images/image3.png" class="card-img-top" alt="...">
+                <span class="overlay-text">ქირავდება</span>
+              </div>
               <div class="card-body">
                 <h5 class="card-price">80 000 ₾</h5>
                 <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
               </div>
             </div>
+          </a>
+
+          <a id="card-link" href="#">
             <div class="card">
+              <div class="image-container">
                 <img src="src/images/image4.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-price">80 000 ₾</h5>
-                  <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div>
+                <span class="overlay-text">იყიდება</span>
               </div>
-              <div class="card">
+              <div class="card-body">
+                <h5 class="card-price">80 000 ₾</h5>
+                <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
+              </div>
+              <div class="card-footer">
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
+              </div>
+            </div>
+          </a>
+
+          <a id="card-link" href="#">
+            <div class="card">
+              <div class="image-container">
                 <img src="src/images/image5.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-price">80 000 ₾</h5>
-                  <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div>
+                <span class="overlay-text">ქირავდება</span>
               </div>
-              <div class="card">
+              <div class="card-body">
+                <h5 class="card-price">80 000 ₾</h5>
+                <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
+              </div>
+              <div class="card-footer">
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
+              </div>
+            </div>
+          </a>
+        
+          <a id="card-link" href="#">
+            <div class="card">
+              <div class="image-container">
                 <img src="src/images/image6.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-price">80 000 ₾</h5>
-                  <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div>
+                <span class="overlay-text">იყიდება</span>
               </div>
-              <div class="card">
+              <div class="card-body">
+                <h5 class="card-price">80 000 ₾</h5>
+                <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
+              </div>
+              <div class="card-footer">
+                <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
+              </div>
+            </div>
+          </a>
+
+          <a id="card-link" href="#">    
+            <div class="card">
+              <div class="image-container">
                 <img src="src/images/image7.png" class="card-img-top" alt="...">
+                <span class="overlay-text">იყიდება</span>
+              </div>
                 <div class="card-body">
                   <h5 class="card-price">80 000 ₾</h5>
                   <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
+                  <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
                 </div>
-              </div>
-              <div class="card">
+            </div>
+          </a>
+
+          <a id="card-link" href="#">   
+            <div class="card">
+              <div class="image-container">
                 <img src="src/images/image8.png" class="card-img-top" alt="...">
+                <span class="overlay-text">ქირავდება</span>
+              </div>
                 <div class="card-body">
                   <h5 class="card-price">80 000 ₾</h5>
                   <p class="card-locat"><image src="src/images/location-marker.png"></image> თბილისი, ი. ჭავჭავაძის 53</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
+                  <span class="text-body-secondary"><img  src="src/images/bed.png" alt="bed">2</span>
+                  <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector.png" alt="vec">55 მ</span>
+                  <span class="text-body-secondary"><img style="margin-top: 5px; height: 22px; width: 22px;"  src="src/images/Vector2.png" alt="vec">0160</span>
                 </div>
-              </div>
-          </div>
+            </div>
+          </a>
+
+        </div>
 
 
         <!-----------------------------------> 

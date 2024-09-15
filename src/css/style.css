@@ -100,7 +100,6 @@ select:focus {
 }
 
 #select {
-    font-family: FiraGO;
     font-size: 16px;
     font-weight: 500;
     line-height: 19.2px;
@@ -319,8 +318,6 @@ select:focus {
 /**/
 
 
-
-
 /*///////////////////////////////*/
 .card-group {
     display: grid;
@@ -335,7 +332,6 @@ select:focus {
 
 .card {
     background-color: #f4f4f4;
-    border: 1px solid black;
     height: 430px !important;
 }
 
@@ -354,6 +350,47 @@ select:focus {
 }
 
 .card-footer {
-    margin-left: 6px;
     line-height: 2rem !important;
+    display: flex;
+    gap: 35px;
 }
+
+.text-body-secondary {
+    display: flex;
+    gap: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.image-container {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    background: #02152680;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+#notFound {
+    display: none;
+    margin-left: 10rem;
+    top: 5rem !important;
+    position: relative;
+    font-size: 20px;
+}
+
+
+
+
+
+
+/*//////////////////////////////////////*/
