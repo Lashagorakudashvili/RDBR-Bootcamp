@@ -126,9 +126,7 @@ document.getElementById('broom').addEventListener('click', function() {
 });
 /**/
 
-
-
-/*//////////////////////////////////////*/
+/**/
 const filterOrder = ['region', 'price', 'size', 'bedrooms'];
 
 function createOrUpdateFilterTag(type, text) {
@@ -136,6 +134,13 @@ function createOrUpdateFilterTag(type, text) {
 
     if (type === 'region') {
         const selectedRegions = Array.from(document.querySelectorAll('input[name="option"]:checked')).map(input => input.nextSibling.textContent.trim());
+        
+        Array.from(filterTagsWrapper.children).forEach(tag => {
+            if (tag.dataset.type === 'region' && !selectedRegions.includes(tag.querySelector('span').textContent)) {
+                tag.remove();
+            }
+        });
+        
         selectedRegions.forEach(region => {
             let existingTag = Array.from(filterTagsWrapper.children).find(tag => tag.dataset.type === 'region' && tag.querySelector('span').textContent === region);
             if (!existingTag) {
@@ -174,8 +179,14 @@ function createOrUpdateFilterTag(type, text) {
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'X';
-            removeButton.onclick = function() {
+            removeButton.onclick = function() {  
                 filterTag.remove();
+
+                if (filterTag.dataset.type === "price") {
+                    document.querySelector(".card-group").style.display = "grid";
+                    document.getElementById("notFound").style.display = "none"
+                }
+
                 updateRemoveAllButtonVisibility();
             };
             filterTag.appendChild(removeButton);
@@ -187,7 +198,9 @@ function createOrUpdateFilterTag(type, text) {
     reorderFilterTags();
     updateRemoveAllButtonVisibility();
 }
+/**/
 
+/**/
 function reorderFilterTags() {
     const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
     const tags = Array.from(filterTagsWrapper.children);
@@ -199,7 +212,9 @@ function reorderFilterTags() {
     filterTagsWrapper.innerHTML = '';
     tags.forEach(tag => filterTagsWrapper.appendChild(tag));
 }
+/**/
 
+/**/
 function updateRemoveAllButtonVisibility() {
     const filterTags = document.querySelectorAll('#filter-tags-wrapper .filter-tag');
     const removeAllButton = document.getElementById('remove-all-button');
@@ -210,22 +225,31 @@ function updateRemoveAllButtonVisibility() {
         removeAllButton.style.display = 'none';
     }
 }
+/**/
 
+/**/
 document.getElementById('remove-all-button').addEventListener('click', function() {
     document.getElementById('filter-tags-wrapper').innerHTML = '';
     this.style.display = 'none';
-});
 
+    document.querySelector(".card-group").style.display = "grid";
+    document.getElementById("notFound").style.display = "none"
+});
+/**/
+
+/**/
 document.querySelector('.submit-button').addEventListener('click', function() {
     createOrUpdateFilterTag('region');
 });
-
-/*///////////////////////////////////////*/
 
 document.querySelector('.submit-button-2').addEventListener('click', function() {
     let minPrice = document.getElementById('inp-min').value;
     let maxPrice = document.getElementById('inp-max').value;
     
+    minPrice = parseFloat(minPrice) || 0;
+
+    maxPrice = parseFloat(maxPrice) || 0;
+
     const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
     const removeAllButton = document.getElementById('remove-all-button');
 
@@ -243,13 +267,6 @@ document.querySelector('.submit-button-2').addEventListener('click', function() 
             document.getElementById("notFound").style.display = "inline"
         }
 })
-/*///////////////////////////////////////*/
-
-/*document.querySelector('.submit-button-2').addEventListener('click', function() {
-    let minPrice = document.getElementById('inp-min').value;
-    let maxPrice = document.getElementById('inp-max').value;
-    createOrUpdateFilterTag('price', `${minPrice}₾ - ${maxPrice}₾`);
-});*/
 
 document.querySelector('.submit-button-3').addEventListener('click', function() {
     let minSize = document.getElementById('inp-min-2').value;
@@ -261,4 +278,7 @@ document.querySelector('.submit-button-4').addEventListener('click', function() 
     let bedrooms = document.getElementById('inp-min-3').value;
     createOrUpdateFilterTag('bedrooms', `${bedrooms} საძინებელი`);
 });
-/*//////////////////////////////////////*/
+/**/
+
+
+/*///////////////////index2.html///////////////////*/
