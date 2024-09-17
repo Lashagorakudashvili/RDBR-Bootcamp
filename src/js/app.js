@@ -1,3 +1,4 @@
+/*1*/
 document.getElementById('reg').addEventListener('click', function() {
     document.getElementById('custom-box').style.display = 'block';
 });
@@ -19,9 +20,9 @@ document.getElementById('reg').addEventListener('click', function() {
 document.getElementById('reg').addEventListener('click', function() {
     document.getElementById('broom-ran').style.display = 'none';
 });
-/**/
+/*1*/
 
-/**/
+/*2*/
 document.getElementById('pri').addEventListener('click', function() {
     document.getElementById('pri-ran').style.display = 'block';
 });
@@ -43,9 +44,9 @@ document.getElementById('pri').addEventListener('click', function() {
 document.getElementById('pri').addEventListener('click', function() {
     document.getElementById('broom-ran').style.display = 'none';
 });
-/**/
+/*2*/
 
-/**/
+/*3*/
 document.querySelectorAll('.min-price').forEach(item => {
     item.addEventListener('click', function() {
         const priceValue = this.getAttribute('data-value');
@@ -61,9 +62,9 @@ document.querySelectorAll(".max-price").forEach(item => {
         document.getElementById("inp-max").value = priceValue;
     })
 })
-/**/
+/*3*/
 
-/**/
+/*4*/
 document.getElementById('siz').addEventListener('click', function() {
     document.getElementById('siz-ran').style.display = 'block';
 });
@@ -84,9 +85,9 @@ document.getElementById('siz').addEventListener('click', function() {
 document.getElementById('siz').addEventListener('click', function() {
     document.getElementById('broom-ran').style.display = 'none';
 });
-/**/
+/*4*/
 
-/**/
+/*5*/
 document.querySelectorAll('.min-siz').forEach(item => {
     item.addEventListener('click', function() {
         const priceValue = this.getAttribute('data-value');
@@ -102,9 +103,9 @@ document.querySelectorAll(".max-siz").forEach(item => {
         document.getElementById("inp-max-2").value = priceValue;
     })
 })
-/**/
+/*5*/
 
-/**/
+/*6*/
 document.getElementById('broom').addEventListener('click', function() {
     document.getElementById('broom-ran').style.display = 'block';
 });
@@ -124,9 +125,9 @@ document.getElementById('broom').addEventListener('click', function() {
 document.getElementById('broom').addEventListener('click', function() {
     document.getElementById('siz-ran').style.display = 'none';
 });
-/**/
+/*6*/
 
-/**/
+/*7*/
 const filterOrder = ['region', 'price', 'size', 'bedrooms'];
 
 function createOrUpdateFilterTag(type, text) {
@@ -198,9 +199,9 @@ function createOrUpdateFilterTag(type, text) {
     reorderFilterTags();
     updateRemoveAllButtonVisibility();
 }
-/**/
+/*7*/
 
-/**/
+/*8*/
 function reorderFilterTags() {
     const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
     const tags = Array.from(filterTagsWrapper.children);
@@ -212,9 +213,9 @@ function reorderFilterTags() {
     filterTagsWrapper.innerHTML = '';
     tags.forEach(tag => filterTagsWrapper.appendChild(tag));
 }
-/**/
+/*8*/
 
-/**/
+/*9*/
 function updateRemoveAllButtonVisibility() {
     const filterTags = document.querySelectorAll('#filter-tags-wrapper .filter-tag');
     const removeAllButton = document.getElementById('remove-all-button');
@@ -225,9 +226,9 @@ function updateRemoveAllButtonVisibility() {
         removeAllButton.style.display = 'none';
     }
 }
-/**/
+/*9*/
 
-/**/
+/*10*/
 document.getElementById('remove-all-button').addEventListener('click', function() {
     document.getElementById('filter-tags-wrapper').innerHTML = '';
     this.style.display = 'none';
@@ -235,9 +236,9 @@ document.getElementById('remove-all-button').addEventListener('click', function(
     document.querySelector(".card-group").style.display = "grid";
     document.getElementById("notFound").style.display = "none"
 });
-/**/
+/*10*/
 
-/**/
+/*11*/
 document.querySelector('.submit-button').addEventListener('click', function() {
     createOrUpdateFilterTag('region');
 });
@@ -278,7 +279,12 @@ document.querySelector('.submit-button-4').addEventListener('click', function() 
     let bedrooms = document.getElementById('inp-min-3').value;
     createOrUpdateFilterTag('bedrooms', `${bedrooms} საძინებელი`);
 });
-/**/
+/*11*/
 
 
-/*///////////////////index2.html///////////////////*/
+
+/****************************************/
+
+
+
+/****************************************/

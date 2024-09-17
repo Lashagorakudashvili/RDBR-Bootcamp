@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/*1*/
 #header {
     width: Fixed (1,920px)px;
     height: Fixed (100px)px;
@@ -39,7 +40,7 @@
 }
 
 .button-group {
-    margin-left: 26rem;
+    margin-left: 26%;
     display: flex;
     gap: 20px;
 }
@@ -119,8 +120,9 @@ select:focus {
     cursor: pointer;
     border: none;
 }
+/*1*/
 
-/**/
+/*2*/
 .custom-box {
     display: none;
     position: absolute;
@@ -173,9 +175,9 @@ select:focus {
     border-radius: 10px;
     cursor: pointer;
 }
-/**/
+/*2*/
 
-/**/
+/*3*/
 #pri-ran, #siz-ran {
     display: none;
     position: absolute;
@@ -228,9 +230,9 @@ select:focus {
 .submit-button-2, .submit-button-3 {
     margin-top: 5rem;
 }
-/**/
+/*3*/
 
-/**/
+/*4*/
 #siz-ran {
     margin-left: 20.4rem;
     height: 470px;
@@ -240,9 +242,9 @@ select:focus {
 .submit-button-3 {
     margin-top: 5rem;
 }
-/**/
+/*4*/
 
-/**/
+/*5*/
 #broom-ran {
     display: none;
     position: absolute;
@@ -265,9 +267,9 @@ select:focus {
     border-radius: 10px;
     border: 1px solid gray;
 }
-/**/
+/*5*/
 
-/**/
+/*6*/
   #selected-filters {
     display: flex;
     margin-top: 2rem;
@@ -315,12 +317,12 @@ select:focus {
     cursor: pointer;
     font-size: 18px;
 }
-/**/
+/*6*/
 
-/**/
+/*7*/
 .card-group {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
     gap: 15px;
     margin-top: 2rem !important;
     margin: auto;
@@ -341,7 +343,6 @@ select:focus {
 
 .card-price, .card-locat, .card-footer {
     padding-left: 25px;
-    
 }
 
 .card-locat {
@@ -386,104 +387,12 @@ a {
     position: relative;
     font-size: 20px;
 }
-/**/
+/*7*/
 
 
 
-/*//////////////////index2.html////////////////////*/
-/**/
-.custom-card {
-    color: black;
-    border: none;
-    border-radius: 5px;
-}
-  
-#custom-card-001 {
-    width: 83%;
-    height: auto;
-    margin-top: 4rem !important;
-    margin: auto;
-}
+/*//////////////////////////////////////*/
 
-.custom-card .custom-row {
-    display: flex;
-}
-  
-.custom-col-md-4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 1.25rem;  
-    position: relative;
-}
-  
-.custom-img-fluid {
-    width: 43vw;
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px 0 0 5px;
-}
-  
-.custom-card-body {
-    padding: 20px;
-    margin-left: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: #808A93;
-}
-  
-.custom-card-title {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: black;
-}
-  
-.custom-card-text {
-    font-size: 20px;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-  
-.custom-card-timestamp {
-    font-size: 0.875rem;
-    color: #808A93;
-    max-width: 400px;
-    margin-top: 1.2rem;
-}
-  
-.custom-card-timestamp small {
-    font-size: 0.875rem;
-}
-
-#del-list {
-    width: 131px;
-    height: 34px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #808A93;
-    color: #808A93;
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 2rem;
-}
-
-.custom-col-md-8 {
-    margin-top: 2rem;
-}
-
-.arrow-right {
-    position: absolute;
-    top: -2.5rem;
-    left: 0;
-    width: 30px; 
-    height: auto;
-}
-/**/
 
 
 /*/////////////////////////////////////*/
