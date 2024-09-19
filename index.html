@@ -348,12 +348,178 @@
 <!----> 
 
 
+<!---->
+<section style="font-weight: 600; font-size: 17px;">
+  <div style="padding-top: 38px !important;" id="myModal" class="modal">
+    <a style="margin-left: 8.5%;" href="index.html"><image src="src/images/LOGO-02 3.png" id="REDBERRY"></image></a>
+    
+    <div class="modal-content">
+      <span style="display: flex; justify-content: center; font-weight: 500; font-size: 32px;">ლისტინგის დამატება</span>
+      <div class="modal-content-items">
+          <span class="close">&times;</span>
+          
+          <div>
+            <div style="margin-top: 10%;">
+              <p>გარიგების ტიპი</p>
+              <form>
+                <div style="margin-top: 1%; display: flex; gap: 5rem;">
+                  <label>
+                    <input style="vertical-align: middle;" type="radio" name="option" value="option 1">
+                    იყიდება
+                  </label>
+                  <label>
+                    <input style="vertical-align: middle;" type="radio" name="option" value="option 2">
+                    ქირავდება
+                  </label>
+                </div>
+            </div>
+        
+            <div style="margin-top: 10%;">
+              <p>მდებარეობა</p>
+              <div style="margin-top: 3%;">
+                <legend>მისამართი *</legend>
+                  <div style="margin-top: 1%; gap: 11px;  display: flex; justify-content: space-between;" class="input-container">
+                    <div style="flex-direction: column; display: flex;" class="input-group">
+                      <label for="textInput1"></label>
+                      <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="text" id="textInput1" name="textInput1">
+                      <span><img src="src/images/check.png" alt="">მინიმუმ ორი სიმბოლო</span>
+                    </div>
+                    <div class="input-group">
+                      <legend style="margin-top: -8%;">საფოსტო ინდექსი *</legend>
+                      <label for="textInput2"></label>
+                      <input style="margin-top: 2.3%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
+                      <br>
+                      <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+                  
+                  <div style="gap: 11px; margin-top: 3%; display: flex; justify-content: space-between;" class="input-container dropdowns-container">
+                    <div class="input-group country-group">
+                      <legend class="legend-country">რეგიონი</legend>
+                      <div style="margin-top: 1.5%;">
+                        <label for="countrySelect"></label>
+                        <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
+                          <option value="">კახეთი</option>
+                          <option value="georgia">Georgia</option>
+                          <option value="usa">USA</option>
+                          <option value="germany">Germany</option>
+                        </select>
+                      </div>
+                    </div>
+                      <div class="input-group city-group">
+                        <legend class="legend-city">ქალაქი</legend>
+                        <div style="margin-top: 1.5%;">
+                        <label for="citySelect"></label>
+                        <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="citySelect" name="citySelect" class="dropdown city-dropdown">
+                          <option value="">თელავი</option>
+                          <option value="tbilisi">Tbilisi</option>
+                          <option value="new-york">New York</option>
+                          <option value="berlin">Berlin</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+            
+                <div style="margin-top: 17%;">  
+                    <p>ბინის დეტალები</p>
+                  <div style="margin-top: 2%;">
+                      <legend>ფასი</legend>
+                    <div style="gap: 2%; display: flex;" class="input-container">
+                      <div style="margin-top: 1%; flex-direction: column; display: flex;" class="input-group">
+                        <label for="textInput1"></label>
+                        <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
+                        <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
+                      </div>
+                      <div style="margin-top: -4% !important;" class="input-group">
+                        <legend style="margin-top: 2%;">ფართობი</legend>
+                        <label for="textInput2"></label>
+                        <input style="margin-top: 2%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
+                        <br>
+                        <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-<!------------------------------------> 
+                <div style="margin-top: 3%;">
+                  <legend>საძინებლების რაოდენობა*</legend>
+                  <div style="margin-top: 1%; flex-direction: column; display: flex;" class="input-group">
+                    <label for="textInput1"></label>
+                    <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
+                    <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები<span>
+                  </div>
+                </div>
+
+                  <div style="margin-top: 4%;" class="input-group description-group">
+                    <legend class="description-legend">აღწერა *</legend>
+                    <label for="descriptionTextarea"></label>
+                    <textarea style="margin-top: 1%; border: 1px solid #808A93; border-radius: 6px; height: 135px; width: 788px; resize: none;" id="descriptionTextarea" name="descriptionTextarea" class="description-textarea"></textarea>
+                    <span><img src="src/images/check.png" alt="">მინიმუმ ხუთი სიტყვა<span>
+                  </div>
+                
+                  <div style="margin-top: 4%;" id="fileUploadForm">
+                    <legend>ატვირთეთ ფოტო *</legend>
+                    <div style="margin-top: 1.5%;" class="file-upload-container" id="fileUploadContainer">
+                      <input type="file" id="fileInput" name="fileInput" class="file-input" multiple accept="image/*">
+                      <div class="upload-overlay">
+                        <button type="button" class="upload-button" id="uploadButton">
+                          <span class="upload-icon">+</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                <div style="margin-top: 14%;">
+                  <p>აგენტი</p>
+                  <div style="margin-top: 2.5%;">
+                  <legend>აირჩიე</legend>
+                  <div style="margin-top: 1%; display: flex;" class="input-container dropdowns-container">
+                    <div class="input-group country-group">
+                      <label for="countrySelect"></label>
+                      <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
+                        <option value="">გიორგი ბრეგვაძე</option>
+                        <option value="georgia">გიორგი ბრეგვაძე</option>
+                        <option value="usa">გიორგი ბრეგვაძე</option>
+                        <option value="germany">გიორგი ბრეგვაძე</option>
+                      </select>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            
+            </form>
+          </div>
+        
+          <div style="margin-top: 13%; padding-bottom: 5rem; justify-content: flex-end;" class="modal-buttons">
+            <button id="cancelBtn">გაუქმება</button>
+            <button id="confirmBtn">დაამატე ლისტინგი</button>
+          </div>
+      
+      </div>  
+    </div>
+  </div>
+</section>
+<!----> 
 
 
 
-<!------------------------------------> 
+
+
+
+<!--/////////////////////////////////////--> 
+
+
+
+
+
+
+
+<!--/////////////////////////////////////--> 
+
+
+
 
 
 
