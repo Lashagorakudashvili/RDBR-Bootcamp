@@ -13,31 +13,39 @@ function scrollCarousel(direction) {
 /*1*/
 
 /*2*/
-const modal = document.getElementById('myModal');
-const btn = document.getElementById('del-list');
-const closeBtn = document.querySelector('.close');
-const confirmBtn = document.getElementById('confirmBtn');
-const cancelBtn = document.getElementById('cancelBtn');
+const modal1 = document.getElementById('myModal-1');
+const btn1 = document.getElementById('del-list');
+const closeBtn1 = document.querySelector('.close-1');
+const confirmBtn1 = document.getElementById('confirmBtn-1');
+const cancelBtn1 = document.getElementById('cancelBtn-1');
 
-btn.onclick = function() {
-    modal.style.display = 'block';
+
+function openModal1() {
+    modal1.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    myModal1.style.overflow = 'hidden';
 }
 
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
+function closeModal1() {
+    modal1.style.display = 'none';
+    document.body.style.overflow = '';
 }
 
-confirmBtn.onclick = function() {
-    window.location.href = "index.html"
-}
+btn1.onclick = openModal1;
 
-cancelBtn.onclick = function() {
-    modal.style.display = 'none';
-}
+closeBtn1.onclick = closeModal1;
+
+confirmBtn1.onclick = function() {
+    window.location.href = "index.html";
+};
+
+cancelBtn1.onclick = closeModal1;
+
 
 window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
+    if (event.target === modal1) {
+        modal1.style.display = 'none';
+        document.body.style.overflow = '';
     }
 }
 /*2*/
@@ -45,7 +53,10 @@ window.onclick = function(event) {
 
 
 
+
 /***********************************/
+
+
 
 
 

@@ -272,7 +272,14 @@ document.querySelector('.submit-button-2').addEventListener('click', function() 
 document.querySelector('.submit-button-3').addEventListener('click', function() {
     let minSize = document.getElementById('inp-min-2').value;
     let maxSize = document.getElementById('inp-max-2').value;
-    createOrUpdateFilterTag('size', `${minSize}მ² - ${maxSize}მ²`);
+
+    if (Number(maxSize) > Number(minSize) || Number(maxSize) === Number(minSize)) {
+        createOrUpdateFilterTag('size', `${minSize}მ² - ${maxSize}მ²`);
+        document.getElementById("validation-message").style.display = "none"
+    }
+    else {
+        document.getElementById("validation-message").style.display = "block"
+    }
 });
 
 document.querySelector('.submit-button-4').addEventListener('click', function() {
@@ -336,11 +343,81 @@ document.getElementById('fileUploadContainer').addEventListener('drop', function
 });
 /*13*/
 
+/*14*/
+const modal2 = document.getElementById('myModal-2');
+const btn2 = document.getElementById('btn-2');
+const closeBtn2 = document.querySelector('.close-2');
+const confirmBtn2 = document.getElementById('confirmBtn-2');
+const cancelBtn2 = document.getElementById('cancelBtn-2');
+const myModal2 = document.getElementById("myModal-2");
+
+function openModal2() {
+    modal2.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    myModal2.style.overflow = 'hidden';
+}
+
+function closeModal2() {
+    modal2.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+btn2.onclick = openModal2;
+
+closeBtn2.onclick = closeModal2;
+
+confirmBtn2.onclick = function() {
+    window.location.href = "index.html";
+};
+
+cancelBtn2.onclick = closeModal2;
+
+window.onclick = function(event) {
+    if (event.target === modal2) {
+        modal2.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+/*14*/
+
+/*15*/
+document.getElementById('uploadButton-2').addEventListener('click', function() {
+    document.getElementById('fileInput-2').click();
+  });
+
+  document.getElementById('fileUploadContainer-2').addEventListener('dragover', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.style.borderColor = '#333';
+});
+
+document.getElementById('fileUploadContainer-2').addEventListener('drop', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.style.borderColor = '';
+
+    const files = event.dataTransfer.files;
+    for (let i = 0; i < files.length; i++) {
+        if (files[i].type.startsWith('image/')) {
+            console.log('Image file:', files[i].name);
+        } else {
+            alert('Only image files are allowed.');
+        }
+    }
+});
+/*15*/
+
+
+
 
 
 
 
 /*///////////////////////////////////*/
+
+
+
+
 
 
 

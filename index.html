@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css"></link>
     
@@ -156,12 +158,14 @@
                     </div>
                 </div>
                 
+                <span id="validation-message" style="color: red; display: none;">გთხოვთ შეიყვანოთ ვალიდური რიცხვები</span>
+
         <button class="submit-button-3">არჩევა</button>
     </div>
 <!---->       
 
 <!---->
-            <div id="broom-ran">
+            <div style="overflow: hidden;" id="broom-ran">
                 <div class="box-header">
                     <span style="text-wrap:nowrap; font-weight: 900;">საძინებლების რაოდენობა</span>
                     <button class="close-button-4" id="close-button-4">X</button>
@@ -199,7 +203,7 @@
       <section> 
         <span id="notFound">აღნიშნული მონაცემებით განცხადება არ იძებნება</span>
 
-        <div style="z-index: 10;" class="card-group">
+        <div style="padding-bottom: 50px; z-index: 10;" class="card-group">
           <a id="card-link" href="index2.html">
             <div class="card">
               <div class="image-container">
@@ -381,13 +385,13 @@
                   <div style="margin-top: 1%; gap: 11px;  display: flex; justify-content: space-between;" class="input-container">
                     <div style="flex-direction: column; display: flex;" class="input-group">
                       <label for="textInput1"></label>
-                      <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="text" id="textInput1" name="textInput1">
+                      <input required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="text" id="textInput1" name="textInput1">
                       <span><img src="src/images/check.png" alt="">მინიმუმ ორი სიმბოლო</span>
                     </div>
                     <div class="input-group">
-                      <legend style="margin-top: -8%;">საფოსტო ინდექსი *</legend>
+                      <legend style="margin-top: -8.4%;">საფოსტო ინდექსი *</legend>
                       <label for="textInput2"></label>
-                      <input style="margin-top: 2.3%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
+                      <input required style="margin-top: 2.3%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
                       <br>
                       <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
                     </div>
@@ -400,7 +404,7 @@
                       <legend class="legend-country">რეგიონი</legend>
                       <div style="margin-top: 1.5%;">
                         <label for="countrySelect"></label>
-                        <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
+                        <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
                           <option value="">კახეთი</option>
                           <option value="georgia">Georgia</option>
                           <option value="usa">USA</option>
@@ -412,7 +416,7 @@
                         <legend class="legend-city">ქალაქი</legend>
                         <div style="margin-top: 1.5%;">
                         <label for="citySelect"></label>
-                        <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="citySelect" name="citySelect" class="dropdown city-dropdown">
+                        <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="citySelect" name="citySelect" class="dropdown city-dropdown">
                           <option value="">თელავი</option>
                           <option value="tbilisi">Tbilisi</option>
                           <option value="new-york">New York</option>
@@ -429,13 +433,13 @@
                     <div style="gap: 2%; display: flex;" class="input-container">
                       <div style="margin-top: 1%; flex-direction: column; display: flex;" class="input-group">
                         <label for="textInput1"></label>
-                        <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
+                        <input required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
                         <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
                       </div>
                       <div style="margin-top: -4% !important;" class="input-group">
                         <legend style="margin-top: 2%;">ფართობი</legend>
                         <label for="textInput2"></label>
-                        <input style="margin-top: 2%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
+                        <input required style="margin-top: 2%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
                         <br>
                         <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
                       </div>
@@ -447,7 +451,7 @@
                   <legend>საძინებლების რაოდენობა*</legend>
                   <div style="margin-top: 1%; flex-direction: column; display: flex;" class="input-group">
                     <label for="textInput1"></label>
-                    <input style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
+                    <input required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput1" name="textInput1">
                     <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები<span>
                   </div>
                 </div>
@@ -455,14 +459,14 @@
                   <div style="margin-top: 4%;" class="input-group description-group">
                     <legend class="description-legend">აღწერა *</legend>
                     <label for="descriptionTextarea"></label>
-                    <textarea style="margin-top: 1%; border: 1px solid #808A93; border-radius: 6px; height: 135px; width: 788px; resize: none;" id="descriptionTextarea" name="descriptionTextarea" class="description-textarea"></textarea>
+                    <textarea required style="margin-top: 1%; border: 1px solid #808A93; border-radius: 6px; height: 135px; width: 788px; resize: none;" id="descriptionTextarea" name="descriptionTextarea" class="description-textarea"></textarea>
                     <span><img src="src/images/check.png" alt="">მინიმუმ ხუთი სიტყვა<span>
                   </div>
                 
                   <div style="margin-top: 4%;" id="fileUploadForm">
                     <legend>ატვირთეთ ფოტო *</legend>
                     <div style="margin-top: 1.5%;" class="file-upload-container" id="fileUploadContainer">
-                      <input type="file" id="fileInput" name="fileInput" class="file-input" multiple accept="image/*">
+                      <input required type="file" id="fileInput" name="fileInput" class="file-input" multiple accept="image/*">
                       <div class="upload-overlay">
                         <button type="button" class="upload-button" id="uploadButton">
                           <span class="upload-icon">+</span>
@@ -478,7 +482,7 @@
                   <div style="margin-top: 1%; display: flex;" class="input-container dropdowns-container">
                     <div class="input-group country-group">
                       <label for="countrySelect"></label>
-                      <select style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
+                      <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
                         <option value="">გიორგი ბრეგვაძე</option>
                         <option value="georgia">გიორგი ბრეგვაძე</option>
                         <option value="usa">გიორგი ბრეგვაძე</option>
@@ -504,19 +508,100 @@
 <!----> 
 
 
+<!----> 
+<section class="myModal-2-section" style="font-weight: 600; font-size: 17px;">
+  <div style="padding-top: 38px !important;" id="myModal-2" class="modal-2">
+    
+    <div style="margin-top: 50px;" class="modal-content-2">
+      <span style="margin-top: 4%; display: flex; justify-content: center; font-weight: 500; font-size: 32px;">აგენტის დამატება</span>
+      <div style="margin-top: 3%;" class="modal-content-items-2">
+          <span class="close-2">&times;</span>
+          
+          <div>
+            <div style="display: flex; justify-content: center; margin: auto;">
+              <div style="margin-top: 3%;">
+                <legend>სახელი *</legend>
+                  <div style="margin-top: 1%; gap: 11px;  display: flex;" class="input-container-2">
+                    <div style="flex-direction: column; display: flex;" class="input-group-2">
+                      <label for="textInput1"></label>
+                      <input required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="text" id="textInput1" name="textInput1">
+                      <span><img src="src/images/check.png" alt="">მინიმუმ ორი სიმბოლო</span>
+                    </div>
+                    <div class="input-group-2">
+                      <legend style="margin-top: -8.4%;">გვარი</legend>
+                      <label for="textInput2"></label>
+                      <input required style="margin-top: 2.3%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="text" id="textInput2" name="textInput2">
+                      <br>
+                      <span><img src="src/images/check.png" alt="">მინიმუმ ორი სიმბოლო</span>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+                  
+
+              <div style="display: flex; justify-content: center; margin: auto;">
+                <div style="margin-top: 3%;">
+                  <legend>ელ-ფოსტა*</legend>
+                    <div style="margin-top: 1%; gap: 11px;  display: flex;" class="input-container-2">
+                      <div style="flex-direction: column; display: flex;" class="input-group-2">
+                        <label for="emailInput1"></label>
+                        <input required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="email" id="emailInput1" name="emailInput1">
+                        <span><img src="src/images/check.png" alt="">გამოიყენეთ @redberry.ge ფოსტა</span>
+                      </div>
+                      <div class="input-group-2">
+                        <legend style="margin-top: -8.4%;">ტელეფონის ნომერი</legend>
+                        <label for="textInput2"></label>
+                        <input required style="margin-top: 2.3%; border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" type="number" id="textInput2" name="textInput2">
+                        <br>
+                        <span><img src="src/images/check.png" alt="">მხოლოდ რიცხვები</span>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                
+                  <div style="margin-top: 4%;" id="fileUploadForm-2">
+                    <legend style="margin-left: 9.5%;">ატვირთეთ ფოტო *</legend>
+                    <div style="display: flex; justify-content: center; margin: 1% auto;" class="file-upload-container-2" id="fileUploadContainer-2">
+                      <input required type="file" id="fileInput-2" name="fileInput" class="file-input-2" multiple accept="image/*">
+                      <div class="upload-overlay-2">
+                        <button type="button" class="upload-button-2" id="uploadButton-2">
+                          <span class="upload-icon-2">+</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+            
+            </form>
+          </div>
+        
+          <div style="margin-right: 9.5% !important; margin-top: 9.5%; padding-bottom: 5rem; justify-content: flex-end;" class="modal-buttons-2">
+            <button id="cancelBtn-2">გაუქმება</button>
+            <button id="confirmBtn-2">დაამატე ლისტინგი</button>
+          </div>
+      
+      </div>  
+    </div>
+  </div>
+</section>
+<!---->
+
+
+
+
+
+
+
+
+
+
+<!--/////////////////////////////////////-->
+
 
 
 
 
 <!--/////////////////////////////////////--> 
 
-
-
-
-
-
-
-<!--/////////////////////////////////////--> 
 
 
 

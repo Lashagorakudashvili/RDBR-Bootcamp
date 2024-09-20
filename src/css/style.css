@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+    font-family: 'Noto Sans Georgian', 'Roboto', sans-serif !important;
+  }
+
 /*1*/
 #header {
     width: Fixed (1,920px)px;
@@ -390,7 +394,7 @@ a {
 /*7*/
 
 /*8*/
-.modal {
+.modal, .modal-2 {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -414,11 +418,11 @@ a {
     border-radius: 15px;
 }
 
-.modal-content-items {
+.modal-content-items, .modal-content-items-2 {
     margin-top: 5%;
 }
 
-.close {
+.close, .close-2 {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -429,13 +433,14 @@ a {
 }
 
 .close:hover,
-.close:focus {
+.close:focus, .close-2:hover,
+.close-2:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-buttons {
+.modal-buttons, .modal-buttons-2 {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -448,37 +453,37 @@ button {
     cursor: pointer;
 }
 
-#cancelBtn, #confirmBtn {
+#cancelBtn, #confirmBtn, #cancelBtn-2, #confirmBtn-2 {
     border-radius: 10px;
     font-weight: 500;
 }
 
-#confirmBtn {
+#confirmBtn, #confirmBtn-2 {
     background: #F93B1D;
     color: white;
 }
 
-#cancelBtn {
+#cancelBtn, #cancelBtn-2 {
     background: white;
     border: 1px solid #F93B1D;
     color: #F93B1D;
 }
-
 /*8*/
 
 /*9*/
-.file-upload-container {
+.file-upload-container, .file-upload-container-2 {
     position: relative;
     width: 788px;
     height: 135px;
-    border: 2px dotted #aaa;
+    border: 2px dashed #aaa;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 10px;
   }
 
-  .file-input {
+  .file-input, .file-input-2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -488,12 +493,12 @@ button {
     cursor: pointer;
   }
 
-  .upload-overlay {
+  .upload-overlay, .upload-overlay-2 {
     position: relative;
     z-index: 1;
   }
 
-  .upload-button {
+  .upload-button, .upload-button-2 {
     background-color: #fff;
     border: 1px solid #2D3648;
     border-radius: 50%;
@@ -511,15 +516,40 @@ button {
     justify-content: center;
   }
 
-  .upload-icon {
+  .upload-icon, .upload-icon-2 {
     margin: 0;
     color: #2D3648;
   }
 
-  .file-upload-container:hover .upload-button {
+  .file-upload-container:hover .upload-button, .file-upload-container-2:hover .upload-button-2 {
     border-color: #333;
   }
 /*9*/
+
+/*10*/
+.modal-2 {
+    z-index: 1500;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content-2 {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    margin: 20% auto;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    height: 784px;
+    max-width: 1009px;
+}
+/*10*/
+
 
 
 

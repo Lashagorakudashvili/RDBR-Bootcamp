@@ -231,7 +231,7 @@
 /*2*/
 
 /*3*/
-.modal {
+.modal-1 {
     display: none;
     position: fixed;
     z-index: 1500;
@@ -242,9 +242,10 @@
     overflow: hidden;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
 }
 
-.modal-content {
+.modal-content-1 {
     background-color: #fefefe;
     margin: 20% auto;
     padding: 20px;
@@ -257,11 +258,11 @@
     border-radius: 15px;
 }
 
-.modal-content-items {
+.modal-content-items-1 {
     margin-top: 5%;
 }
 
-.close {
+.close-1 {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -271,14 +272,14 @@
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close-1:hover,
+.close-1:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-buttons {
+.modal-buttons-1 {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -291,17 +292,17 @@ button {
     cursor: pointer;
 }
 
-#cancelBtn, #confirmBtn {
+#cancelBtn-1, #confirmBtn-1 {
     border-radius: 10px;
     font-weight: 500;
 }
 
-#confirmBtn {
+#confirmBtn-1 {
     background: #F93B1D;
     color: white;
 }
 
-#cancelBtn {
+#cancelBtn-1 {
     background: white;
     border: 1px solid #F93B1D;
     color: #F93B1D;
@@ -310,7 +311,12 @@ button {
 
 
 
+
+
+
 /*//////////////////////////////////////////*/
+
+
 
 
 
