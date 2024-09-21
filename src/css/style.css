@@ -122,7 +122,8 @@ select:focus {
 
 #reg, #pri, #siz, #broom {
     cursor: pointer;
-    border: none;
+    border: none !important;
+    background-color: white !important;
 }
 /*1*/
 
@@ -336,7 +337,8 @@ select:focus {
 }
 
 .card {
-    background-color: #f4f4f4;
+    border: none !important;
+    background-color: white !important;
     height: 430px !important;
 }
 
@@ -549,15 +551,3 @@ button {
     max-width: 1009px;
 }
 /*10*/
-
-
-
-
-
-/*/////////////////////////////////////////*/
-
-
-
-
-
-/*/////////////////////////////////////////*/

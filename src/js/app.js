@@ -1,3 +1,99 @@
+/*backEnd0*/
+const apiToken = '9d0fe42f-5291-4929-aa88-9b7f469c50fc';
+
+fetch('https://api.example.com/endpoint', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${apiToken}`,
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+/*backEnd0*/
+
+/*backEnd1*/
+document.addEventListener("DOMContentLoaded", function() {
+    const apiURL = 'https://api.real-estate-manager.redberryinternship.ge/api/regions';
+    const checkboxContainer = document.getElementById('checkbox-container');
+
+    fetch(apiURL, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        checkboxContainer.innerHTML = '';
+
+        data.forEach(region => {
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'region';
+            checkbox.value = region.id;
+
+            label.textContent = region.name;
+            label.prepend(checkbox);
+
+            checkboxContainer.appendChild(label);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching regions:', error);
+    });
+});
+/*backEnd1*/
+
+/*backEnd2*/
+document.addEventListener("DOMContentLoaded", function() {
+    const regionSelect = document.getElementById('regionSelect');
+    const citySelect = document.getElementById('citySelect');
+
+    fetch('https://api.real-estate-manager.redberryinternship.ge/api/regions')
+        .then(response => response.json())
+        .then(regions => {
+
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region.id;
+                option.textContent = region.name;
+                regionSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching regions:', error);
+        });
+
+    regionSelect.addEventListener('change', function() {
+        const selectedRegionId = regionSelect.value;
+
+        citySelect.innerHTML = '<option value="">აირჩიეთ ქალაქი</option>';
+
+        if (selectedRegionId) {
+            fetch(`https://api.real-estate-manager.redberryinternship.ge/api/cities`)
+                .then(response => response.json())
+                .then(cities => {
+                    const filteredCities = cities.filter(city => city.region_id === parseInt(selectedRegionId));
+
+                    filteredCities.forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city.id;
+                        option.textContent = city.name;
+                        citySelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching cities:', error);
+                });
+        }
+    });
+});
+/*backEnd2*/
+
 /*1*/
 document.getElementById('reg').addEventListener('click', function() {
     document.getElementById('custom-box').style.display = 'block';
@@ -134,14 +230,14 @@ function createOrUpdateFilterTag(type, text) {
     const filterTagsWrapper = document.getElementById('filter-tags-wrapper');
 
     if (type === 'region') {
-        const selectedRegions = Array.from(document.querySelectorAll('input[name="option"]:checked')).map(input => input.nextSibling.textContent.trim());
-        
+        const selectedRegions = Array.from(document.querySelectorAll('input[name="region"]:checked')).map(input => input.nextSibling.textContent.trim());
+
         Array.from(filterTagsWrapper.children).forEach(tag => {
             if (tag.dataset.type === 'region' && !selectedRegions.includes(tag.querySelector('span').textContent)) {
                 tag.remove();
             }
         });
-        
+
         selectedRegions.forEach(region => {
             let existingTag = Array.from(filterTagsWrapper.children).find(tag => tag.dataset.type === 'region' && tag.querySelector('span').textContent === region);
             if (!existingTag) {
@@ -164,7 +260,7 @@ function createOrUpdateFilterTag(type, text) {
                 filterTagsWrapper.appendChild(filterTag);
             }
         });
-    } else {
+    }  else {
         let existingTag = Array.from(filterTagsWrapper.children).find(tag => tag.dataset.type === type);
 
         if (existingTag) {
@@ -406,19 +502,3 @@ document.getElementById('fileUploadContainer-2').addEventListener('drop', functi
     }
 });
 /*15*/
-
-
-
-
-
-
-
-/*///////////////////////////////////*/
-
-
-
-
-
-
-
-/*///////////////////////////////////*/

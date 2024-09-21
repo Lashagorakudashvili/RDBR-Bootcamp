@@ -35,33 +35,16 @@
         <button style="font-weight: 600;" id="broom">საძინებლების რაოდენობა</button><image style="margin-left: -2rem;" src="src/images/Icon.png">   
       
 <!---->
-            <div class="custom-box" id="custom-box">
-                <div class="box-header">
-                    <span style="font-weight: 900;">რეგიონის მიხედვით</span>
-                    <button class="close-button" id="close-button">X</button>
-                </div>
-                <div class="checkbox-container">
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="option" value="1"> ქართლი</label>
-                        <label><input type="checkbox" name="option" value="2"> კახეთი</label>
-                        <label><input type="checkbox" name="option" value="3"> იმერეთი</label>
-                        <label><input type="checkbox" name="option" value="3"> სამეგრელო</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="option" value="4"> გურია</label>
-                        <label><input type="checkbox" name="option" value="5"> რაჭა</label>
-                        <label><input type="checkbox" name="option" value="6"> ლეჩხუმი</label>
-                        <label><input type="checkbox" name="option" value="3"> სამცხე-ჯავახეთი</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="option" value="7"> აჭარა</label>
-                        <label><input type="checkbox" name="option" value="8"> სვანეთი</label>
-                        <label><input type="checkbox" name="option" value="9"> მცხეთა-მთიანეთი</label>
-                        <label><input type="checkbox" name="option" value="9"> თბილისი</label>
-                    </div>
-                </div>
-                <button class="submit-button">არჩევა</button>
-            </div>
+      <div class="custom-box" id="custom-box">
+        <div class="box-header">
+            <span style="font-weight: 900;">რეგიონის მიხედვით</span>
+            <button class="close-button" id="close-button">X</button>
+        </div>
+        <div class="checkbox-container" id="checkbox-container">
+
+        </div>
+        <button class="submit-button">არჩევა</button>
+      </div>
 <!---->
 
 <!---->
@@ -399,32 +382,25 @@
                 </div> 
               </div>
                   
-                  <div style="gap: 11px; margin-top: 3%; display: flex; justify-content: space-between;" class="input-container dropdowns-container">
+                <div style="gap: 11px; margin-top: 3%; display: flex; justify-content: space-between;" class="input-container dropdowns-container">
                     <div class="input-group country-group">
                       <legend class="legend-country">რეგიონი</legend>
-                      <div style="margin-top: 1.5%;">
-                        <label for="countrySelect"></label>
-                        <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="countrySelect" name="countrySelect" class="dropdown country-dropdown">
-                          <option value="">კახეთი</option>
-                          <option value="georgia">Georgia</option>
-                          <option value="usa">USA</option>
-                          <option value="germany">Germany</option>
-                        </select>
-                      </div>
-                    </div>
-                      <div class="input-group city-group">
-                        <legend class="legend-city">ქალაქი</legend>
                         <div style="margin-top: 1.5%;">
-                        <label for="citySelect"></label>
-                        <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="citySelect" name="citySelect" class="dropdown city-dropdown">
-                          <option value="">თელავი</option>
-                          <option value="tbilisi">Tbilisi</option>
-                          <option value="new-york">New York</option>
-                          <option value="berlin">Berlin</option>
+                            <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="regionSelect" name="regionSelect">
+                              <option value="">აირჩიეთ რეგიონი</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <div class="input-group city-group">
+                    <legend class="legend-city">ქალაქი</legend>
+                      <div style="margin-top: 1.5%;">
+                        <select required style="border: 1px solid #808A93; border-radius: 6px; height: 42px; width: 384px;" id="citySelect" name="citySelect">
+                          <option value="">აირჩიეთ ქალაქი</option>
                         </select>
                       </div>
                     </div>
-                  </div>
+                </div>
             
                 <div style="margin-top: 17%;">  
                     <p>ბინის დეტალები</p>
@@ -584,31 +560,7 @@
   </div>
 </section>
 <!---->
-
-
-
-
-
-
-
-
-
-
-<!--/////////////////////////////////////-->
-
-
-
-
-
-<!--/////////////////////////////////////--> 
-
-
-
-
-
-
-
-   </main>
+</main>
 
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="src/js/app.js"></script>
